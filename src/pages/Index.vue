@@ -1,14 +1,10 @@
 <template>
   <Layout>
 
-    <h1>Hello, Master Gardeners!</h1>
+    <h1>Welcome to the Quarry Lakes Demonstration Garden!</h1>
     <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.id">
     {{page.node.Scientific_Name}}
     {{page.node.Common_Name}}
-    {{page.node.Size__width_}}
-    {{page.node.Size__height__}}
-    {{page.node.ID}}
-
     </div>
   </Layout>
 </template>
@@ -30,7 +26,7 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'ACMG at Quarry Lakes Demonstration Garden'
   }
 }
 </script>
