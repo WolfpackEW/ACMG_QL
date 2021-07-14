@@ -1,6 +1,7 @@
 
 <template>
-<v-card width="300">
+<div class = "footer"> 
+<v-card width="100">
   <v-footer 
   absolute
   class ="font-weight-medium"
@@ -13,8 +14,17 @@
       </v-col>
    </v-footer>
   </v-card> 
+  </div> 
 </template>
+
 
 <script> 
 export default{}; 
 </script> 
+
+<style>
+.footer{
+  padding: 2px;
+  background: white; 
+}
+</style>

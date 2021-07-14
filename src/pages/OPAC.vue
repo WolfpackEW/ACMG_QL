@@ -11,7 +11,7 @@
 <!-- Always put page-query between <template> and <script> -->
 <page-query>
 query {
-  allGoogleSheet (filter: { Location: { in: ["mediterranean"] }}){
+  allGoogleSheet (filter: { Location: { in: ["OPAC"] }}){
     edges {
       node {
             ID

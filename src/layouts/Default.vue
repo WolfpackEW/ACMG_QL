@@ -1,12 +1,14 @@
 <template>
   <div class="layout">
     <Header />
+   <!--
     <v-btn depressed> 
-      Normal
+      Normal 
     </v-btn> 
+    -->
     <v-card
       max-width="760">
-    <g-image alt="official logo" src="~/footer.jpg" fit="contain" /> <!-- width="760" height="200" -->
+    <g-image alt="official logo" src="~/footer.jpg" fit="contain" quality="100"/> <!-- width="760" height="200" -->
     </v-card>
     <header class="header">
       <strong>
@@ -17,10 +19,14 @@
         <g-link class="nav__link" to="/about/">About Us</g-link>
         <g-link class="nav__link" to="/contact/">Contact Us</g-link>
         <g-link class="nav__link" to="/mediterranean/">Mediterranean</g-link>
+        <g-link class="nav__link" to="/grasses/">Grasses</g-link>
+        <g-link class="nav__link" to="/natives/">Natives</g-link>
+        <g-link class="nav__link" to="/sensory/">Sensory</g-link>
+        <g-link class="nav__link" to="/opac/">Outstanding Plants of Alameda County</g-link>
       </nav>
     </header>
     <slot/>
-    <Card />
+    
     <Footer /> 
   </div> 
 </template>
