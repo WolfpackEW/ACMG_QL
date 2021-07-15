@@ -3,8 +3,6 @@
     <h1>Welcome to the Quarry Lakes Demonstration Garden!</h1>
     <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
     {{page.node.Scientific_Name}}
-    {{page.node.Common_Name}}
-    {{page.node.Unique_Name}}
     </div>
   </Layout>
   

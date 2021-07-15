@@ -1,9 +1,10 @@
 <template>
 <Layout>
+  <div>
+    The Grasses Garden is full and lush during spring and summer and then puts on great displays of color and texture in fall and winter. Once established, most grasses are low-maintenance, drought-tolerant, and resistant to disease.
+  </div> 
     <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
     {{page.node.Scientific_Name}}
-    {{page.node.Common_Name}}
-    {{page.node.Location}}
     </div>
   </Layout>
 </template>

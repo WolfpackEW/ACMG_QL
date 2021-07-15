@@ -1,9 +1,10 @@
 <template>
   <Layout>
+    <div> 
+      Alameda County is fortunate to be situated in a Mediterranean climate zone similar to those countries bordering the Mediterranean Basin. A Mediterranean climate is typically cool and wet in the winter, with infrequent freezes, and warm or hot and dry in the summer, with very little summer rain. There is a large collection of plant species that are well suited to this climate, wherever it occurs. The Mediterranean Garden features many of these plants including Lion’s Tail, Lavender, Jerusalem Sage, and Dwarf Olive Trees.
+    </div> 
     <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
     {{page.node.Scientific_Name}}
-    {{page.node.Common_Name}}
-    {{page.node.Location}}
     </div>
   </Layout>
 </template>

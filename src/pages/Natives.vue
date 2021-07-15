@@ -1,9 +1,11 @@
 <template>
   <Layout>
+    <div> 
+    The Native Plant Garden connects us to our natural heritage and a sense of place that is California. These plants work well in low maintenance gardens, are adopted to dry summers, work well in water-wise gardens, and generally do not require fertilizers. Research indicates that native plants are preferred by native pollinators and wildlife. There is a native plant for any garden site or design style.
+    </div> 
     <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
+    
     {{page.node.Scientific_Name}}
-    {{page.node.Common_Name}}
-    {{page.node.Location}}
     </div>
   </Layout>
 </template>

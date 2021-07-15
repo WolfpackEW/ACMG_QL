@@ -1,9 +1,10 @@
 <template>
   <Layout>
+    <div> 
+      Stroll past the Sensory Garden and enjoy a kaleidoscope of colors and textures. Breathe in the sweet fragrance of flowers and herbs. This garden maximizes the sensory impact that a garden can offer. Rosemary is a fragrant evergreen herb native to the Mediterranean.
+    </div> 
     <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
     {{page.node.Scientific_Name}}
-    {{page.node.Common_Name}}
-    {{page.node.Location}}
     </div>
   </Layout>
 </template>
