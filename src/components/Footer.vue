@@ -1,30 +1,29 @@
-
 <template>
-<div class = "footer"> 
-<v-card width="100">
-  <v-footer 
-  absolute
-  class ="font-weight-medium"
-  >    <!--  <g-image src="~/footer.jpg" position="bottom" quality="100" fit="contain"/> --> 
-      <v-col
-      class="text-center"
-      cols="12"
-      >
-      <div>&copy; {{ new Date().getFullYear() }} Regents of the University of California</div>
-      </v-col>
-   </v-footer>
-  </v-card> 
-  </div> 
+  <v-footer absolute dark padless class="mt-5">
+    <v-card
+      flat
+      tile
+      class="primary white--text text-center align-self-md-stretch"
+      width="100%"
+    >
+      <v-card-text class="white--text">
+        &copy; {{ new Date().getFullYear() }} —
+        <strong>Regents of the University of California</strong>
+      </v-card-text>
+    </v-card>
+  </v-footer>
 </template>
 
-
-<script> 
-export default{}; 
-</script> 
-
-<style>
-.footer{
-  padding: 2px;
-  background: white; 
+<script>
+export default {
+  components: {},
+  data: () => ({
+    icons: [
+      'fab fa-facebook',
+      'fab fa-twitter',
+      'fab fa-linkedin',
+      'fab fa-instagram',
+    ],
+  }),
 }
-</style>
+</script>

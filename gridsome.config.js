@@ -5,23 +5,55 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Master Gardeners of Alameda County at Quarry Lakes',
+  siteName: 'Quarry Lakes Demonstration Garden',
+  siteDescription: 'Outstanding Plants of Alameda County',
   plugins: [
-     {
-        use: 'gridsome-source-google-sheets',
-        options: {
-          sheetId: "1HUB6Z1-BfNtmc-v0jeEjFMrOKuR_Ky_Z8NOWqKF0v7g",
-          apiKey: "AIzaSyCqfZdP590VRm9_03pdPmj1jpHizEORt9o",     
-        }
-      }
+    {
+      use: 'gridsome-source-google-sheets-v2',
+      options: {
+        //sheetId: process.env.GOOGLE_SHEET_ID, //'GOOGLE_SHEET_ID',
+        apiKey: process.env.GOOGLE_API_KEY, //'GOOGLE_API_KEY',
+        spreadsheets: [
+          {
+            spreadsheetId: process.env.GOOGLE_SHEET_ID,
+            sheets: [
+              {
+                sheetName: 'Sheet1', // Example: "Sheet1" "QL_Plants"
+                collectionName: 'googleSheet', // Example: "Projects" (Must be unique)
+              },
+              //{
+              //  sheetName: 'Natives', // Example: "Sheet2"
+              //  collectionName: "googleSheet", // Example: "Users" (Must be Unique)
+              //},
+            ],
+          },
+        ],
+      },
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'articles/**/*.md',
+        typeName: 'Article',
+        resolveAbsolutePaths: true,
+        remark: {
+          externalLinksTarget: '_blank',
+          externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+        },
+      },
+    },
+  ],
+  templates: {
+    googleSheet: [
+      {
+        path: '/:ID',
+        component: './src/templates/googleSheet.vue',
+      },
     ],
-    templates: {
-      googleSheet: [
-        {
-          path: '/:ID',
-          component: './src/templates/googleSheet.vue'
-        }
-      ]
-    }
-    
+  },
+  transformers: {
+    remark: {
+      plugins: ['@gridsome/remark-prismjs'],
+    },
+  },
 }

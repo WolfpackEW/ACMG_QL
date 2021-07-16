@@ -1,14 +1,18 @@
 <template>
   <Layout>
-    <h1>About Us</h1>
-    <p>Hi, Welcome to Alameda County Master Gardener's Demonstration Garden at Quarry Lakes!</p>  
+    <about />
   </Layout>
 </template>
 
 <script>
+import About from '@/components/About.vue'
+
 export default {
   metaInfo: {
-    title: 'About Us'
-  }
+    title: 'Hello, UC Master Gardeners!',
+  },
+  components: {
+    About,
+  },
 }
 </script>
