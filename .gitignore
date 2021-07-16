@@ -6,3 +6,5 @@ node_modules
 dist
 .env
 .env.*
+/env.mine
+/gridsome-opac.code-workspace
