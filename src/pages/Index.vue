@@ -2,7 +2,9 @@
   <Layout>
     <h1>Welcome to the Quarry Lakes Demonstration Garden!</h1>
     <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
-    {{page.node.Scientific_Name}}
+    <p class="font-italic"> 
+    <a v-bind:href="page.node.Links">{{ page.node.Scientific_Name }}</a>
+    </p>
     </div>
   </Layout>
   
@@ -16,7 +18,7 @@
             Scientific_Name
             Common_Name
             Description
-            Size__height__
+            Size__height_
             Size__width_
             Bloom_Season
             Pruning_Needs
@@ -24,8 +26,10 @@
             Exposure
             Type 
             Location  
-            Unique_ID
             Unique_Name
+            Img_URL
+            Attribution
+            Links
                }
              }
                   }

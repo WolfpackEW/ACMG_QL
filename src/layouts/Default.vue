@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <Header />
+    <!-- <Header /> --> 
    <!--
     <v-btn depressed> 
       Normal 
