@@ -1,13 +1,20 @@
 <template>
   <Layout>
-    <div> 
+    <h1>Sensory Garden</h1>
+    <div class="attribute_container">
       <p>
       Stroll past the Sensory Garden and enjoy a kaleidoscope of colors and textures. Breathe in the sweet fragrance of flowers and herbs. This garden maximizes the sensory impact that a garden can offer. Rosemary is a fragrant evergreen herb native to the Mediterranean.
       </p> 
-    </div> 
     <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
-    <a v-bind:href="page.node.Links">{{ page.node.Scientific_Name }}</a>
+      <div class="container-name"> 
+        <a v-bind:href="page.node.Links">
+          <div :class="[italic]">{{ page.node.Main_Name }}</div>
+          <div class="div2"> {{ page.node.Name_Extension }}</div>
+          <div class="div3"> ({{ page.node.Common_Name }})</div> 
+          </a> 
+      </div> 
     </div>
+    </div> 
   </Layout>
 </template>
 
@@ -19,6 +26,8 @@ query {
       node {
             ID
             Scientific_Name
+            Main_Name
+            Name_Extension
             Common_Name
             Description
             Size__height_
@@ -40,11 +49,30 @@ query {
 </page-query>
 
 <script>
-export default{}
+export default{
+  data() {
+    return {
+      italic: 'italic', 
+    }
+  }
+}
 </script>
 
 <style>
 .home-links a {
   margin-right: 1rem;
 }
+.attribute_container{
+  padding: 10px;
+  background: white; 
+}
+body
+{
+  background: lightblue; 
+}
+.italic { font-style: italic; }
+.container-name div { 
+    display: inline; 
+		height: auto; 
+  } 
 </style>

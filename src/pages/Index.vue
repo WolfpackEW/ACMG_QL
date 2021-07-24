@@ -1,10 +1,16 @@
 <template>
   <Layout>
     <h1>Welcome to the Quarry Lakes Demonstration Garden!</h1>
+    <div class="attribute_container">
     <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
-    <p class="font-italic"> 
-    <a v-bind:href="page.node.Links">{{ page.node.Scientific_Name }}</a>
-    </p>
+    <div class="container-name"> 
+       <a v-bind:href="page.node.Links">
+         <div :class="[italic]">{{ page.node.Main_Name }}</div>
+         <div class="div2"> {{ page.node.Name_Extension }}</div>
+         <div class="div3"> ({{ page.node.Common_Name }})</div> 
+      </a> 
+    </div> 
+    </div>
     </div>
   </Layout>
   
@@ -17,6 +23,8 @@
             ID
             Scientific_Name
             Common_Name
+            Main_Name
+            Name_Extension
             Description
             Size__height_
             Size__width_
@@ -35,7 +43,15 @@
                   }
            }
 </page-query>
-
+<script>
+export default{
+  data() {
+    return {
+      italic: 'italic', 
+    }
+  }
+}
+</script>
 
 <style>
 .home-links a {
@@ -45,4 +61,9 @@ body
 {
   background: lightblue; 
 }
+.italic { font-style: italic; }
+.container-name div { 
+    display: inline; 
+		height: auto; 
+  } 
 </style>
