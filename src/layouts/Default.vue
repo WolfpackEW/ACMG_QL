@@ -1,15 +1,12 @@
 <template>
   <div class="layout">
-    <Header />
+    <!-- <Header /> --> 
    <!--
     <v-btn depressed> 
       Normal 
     </v-btn> 
     -->
-    <v-card
-      max-width="760">
-    <g-image alt="official logo" src="~/footer.jpg" fit="contain" quality="100"/> <!-- width="760" height="200" -->
-    </v-card>
+    <g-image alt="official logo" src="~/footer.jpg" width ="500" height = "500" fit="inside" quality="100" /> <!-- width="760" height="200" -->
     <header class="header">
       <strong>
         <g-link to="/">{{ $static.metadata.siteName}}</g-link>

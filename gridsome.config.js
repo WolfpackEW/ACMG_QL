@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Master Gardeners of Alameda County at Quarry Lakes',
+  siteName: 'UC Master Gardener Program of Alameda County',
   plugins: [
      {
         use: 'gridsome-source-google-sheets',
