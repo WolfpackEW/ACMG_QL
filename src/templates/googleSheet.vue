@@ -1,9 +1,11 @@
 <template>
   <Layout>
+    <section id="plant" class="plant-section">
+    <v-container>
     <!-- If you want to add a photo, non dynamically from the google sheets, then use <g-image src="~/pathname" width="x"/> -->
-    <v-card width="400" height="400">
+    <!--<v-card width="400" height="400">-->
     <g-image :src="$page.googleSheet.Img_URL" fit="inside"/> 
-    </v-card> 
+    <!--</v-card>-->
       <div class="attribute_container">
         <h3>{{$page.googleSheet.Common_Name}}</h3>
          <!--  <div>Scientific Name:  {{$page.googleSheet.Scientific_Name}}</div> -->
@@ -31,11 +33,15 @@
           <div>Img URL:  {{$page.googleSheet.Img_URL}}</div>
           -->
           <div>Attribution: {{$page.googleSheet.Attribution}}</div>
+          <br>
+          <br>
          <!-- 
           <div>Links: {{$page.googleSheet.Links}}</div> 
           --> 
         <!--  <div>Unique ID - {{$page.googleSheet.Unique_ID}}</div> -->
       </div>
+      </v-container>
+    </section>
   </Layout >
 </template>
 

@@ -14,7 +14,9 @@
           </a> 
       </div> 
     </div>
-    </div> 
+    </div>
+    <br>
+    <br>  
   </Layout>
 </template>
 

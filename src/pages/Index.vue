@@ -2,16 +2,18 @@
   <Layout>
     <h1>Welcome to the Quarry Lakes Demonstration Garden!</h1>
     <div class="attribute_container">
-    <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
-    <div class="container-name"> 
-       <a v-bind:href="page.node.Links">
-         <div :class="[italic]">{{ page.node.Main_Name }}</div>
-         <div class="div2"> {{ page.node.Name_Extension }}</div>
-         <div class="div3"> ({{ page.node.Common_Name }})</div> 
-      </a> 
-    </div> 
+      <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
+        <div class="container-name"> 
+          <a v-bind:href="page.node.Links">
+            <div :class="[italic]">{{ page.node.Main_Name }}</div>
+            <div class="div2"> {{ page.node.Name_Extension }}</div>
+            <div class="div3"> ({{ page.node.Common_Name }})</div> 
+          </a> 
+        </div> 
+      </div>
     </div>
-    </div>
+    <br>
+    <br>
   </Layout>
   
 </template>
