@@ -41,6 +41,7 @@ export default {
       items: [
         { title: 'Home', link: '/', icon: 'home' },
         { title: 'About', link: 'about', icon: 'about' },
+        { title: 'Contact', link: 'contact', icon: 'contact' },
         { title: 'Articles', link: 'articles', icon: 'articles' },
       ],
     }
