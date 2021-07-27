@@ -6,12 +6,11 @@
 
 module.exports = {
   siteName: 'Quarry Lakes Demonstration Garden',
-  siteDescription: 'Outstanding Plants of Alameda County',
+  siteDescription: 'The Quarry Lakes Demonstration Garden in Fremont is situated within the East Bay Regional Park’s (EBRP) beautiful water-oriented recreation area. Its 450 acres includes several ponds, a swimming beach, fishing areas, picnic areas, boating, volleyball courts, hiking trails, and a rare fruit orchard. Quarry Lakes has something for everyone. And if that isn’t enough, you can just sit in the Demonstration Garden and do nothing but enjoy the fabulous views of Mission Peak, the East Bay hills, the Livermore hills, and various wildlife.',
   plugins: [
     {
       use: 'gridsome-source-google-sheets-v2',
       options: {
-        //sheetId: process.env.GOOGLE_SHEET_ID, //'GOOGLE_SHEET_ID',
         apiKey: process.env.GOOGLE_API_KEY, //'GOOGLE_API_KEY',
         spreadsheets: [
           {

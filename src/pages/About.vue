@@ -16,3 +16,17 @@ export default {
   },
 }
 </script>
+
+<style>
+.home-links a {
+  margin-right: 1rem;
+}
+body
+{
+  background: lightblue; 
+}
+.attribute_container{
+  padding: 10px;
+  background: white; 
+}
+</style>

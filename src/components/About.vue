@@ -3,25 +3,10 @@
     <v-container>
       <v-row>
         <v-col>
-          <g-image
-            alt="Prototype image"
-            src="~/PlantTag-Prototype.png"
-            width="300"
-          />
-        </v-col>
-        <v-col sm="6" class="d-flex flex-column justify-center">
-          <h1>Hi, UC Master Gardeners.</h1>
-          <div>
-            <p>This is the prototype for Plant Tag using NFC chip</p>
-            <p></p>
-
-            <p>
-              Github:
-              <a href="https://github.com/hisgarden/gridsome-googlesheet"
-                >Working Project</a
-              >
-            </p>
-          </div>
+        <div class="attribute_container">
+          <p>Hi, We are the UC Master Gardeners of Alameda County!</p>  
+          <a href="http://acmg.ucanr.edu/Who_Are_Master_Gardeners_and_What_Do_They_Do/">Who are Master Gardeners and What Do They Do? - UC Master Gardener Program of Alameda County</a>
+        </div> 
         </v-col>
       </v-row>
     </v-container>

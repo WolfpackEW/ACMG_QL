@@ -1,6 +1,22 @@
 <template>
   <Layout>
-    <AllPlants />
+    <h1>Sensory Garden</h1>
+    <div class="attribute_container">
+      <p>
+      Stroll past the Sensory Garden and enjoy a kaleidoscope of colors and textures. Breathe in the sweet fragrance of flowers and herbs. This garden maximizes the sensory impact that a garden can offer. Rosemary is a fragrant evergreen herb native to the Mediterranean.
+      </p> 
+    <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
+      <div class="container-name"> 
+        <a v-bind:href="page.node.Links">
+          <div :class="[italic]">{{ page.node.Main_Name }}</div>
+          <div class="div2"> {{ page.node.Name_Extension }}</div>
+          <div class="div3"> ({{ page.node.Common_Name }})</div> 
+          </a> 
+      </div> 
+    </div>
+    </div>
+    <br>
+    <br>  
   </Layout>
 </template>
 
@@ -10,20 +26,24 @@ query {
   allGoogleSheet (filter: { Location: { in: ["Sensory"] }}){
     edges {
       node {
-        ID
-        Scientific_Name
-        Common_Name
-        Description
-        Bloom_Season
-        Water_Needs
-        Exposure
-        Pruning_Needs
-        Location
-        Size__height_
-        Size__width_
-        Type
-        Img_URL
-        Attribution
+            ID
+            Scientific_Name
+            Main_Name
+            Name_Extension
+            Common_Name
+            Description
+            Size__height_
+            Size__width_
+            Bloom_Season
+            Pruning_Needs
+            Water_Needs
+            Exposure
+            Type 
+            Location  
+            Unique_Name
+            Img_URL
+            Attribution
+            Links
       }
     }
   }
@@ -31,19 +51,12 @@ query {
 </page-query>
 
 <script>
-import Plant from '@/components/Plant.vue'
-import AllPlants from '@/components/AllPlants.vue'
-//import Card from "@/components/Card.vue"
-
-export default {
-  metaInfo: {
-    title: 'Hello, UC Master Gardeners!',
-  },
-  components: {
-    AllPlants,
-    Plant,
-    //Card
-  },
+export default{
+  data() {
+    return {
+      italic: 'italic', 
+    }
+  }
 }
 </script>
 
@@ -51,4 +64,17 @@ export default {
 .home-links a {
   margin-right: 1rem;
 }
+.attribute_container{
+  padding: 10px;
+  background: white; 
+}
+body
+{
+  background: lightblue; 
+}
+.italic { font-style: italic; }
+.container-name div { 
+    display: inline; 
+		height: auto; 
+  } 
 </style>
