@@ -41,6 +41,24 @@ module.exports = {
         },
       },
     },
+    {
+      use: '@noxify/gridsome-plugin-remote-image',
+      options: {
+        'typeName' : 'googleSheet',
+        'sourceField': 'remoteImage',
+        'targetField': 'imageDownloaded',
+        'targetPath': './src/assets/remoteImages'
+      }
+    },
+    {
+      use: '@noxify/gridsome-plugin-remote-image',
+      options: {
+        'typeName' : 'googleSheet',
+        'sourceField': 'remoteImages',
+        'targetField': 'imagesDownloaded',
+        'targetPath': './src/assets/remoteImages'
+      }
+    }
   ],
   templates: {
     googleSheet: [

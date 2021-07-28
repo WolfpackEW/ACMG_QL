@@ -2,7 +2,14 @@
   <Layout>
     <section id="plant" class="plant-section">
       <v-container>
-        <g-image :src="$page.googleSheet.Img_URL" :alt="$page.googleSheet.Common_Name"/> 
+        <v-img
+          contain
+          max-height="400"
+          max-width="450"
+          :src="$page.googleSheet.Img_URL"
+          :alt="$page.googleSheet.Common_Name"
+        ></v-img>
+        
           <h3>{{$page.googleSheet.Common_Name}}</h3>
           <div>Scientific Name - {{$page.googleSheet.Scientific_Name}}</div>
           <div>Description - {{$page.googleSheet.Description}}</div>
@@ -15,7 +22,7 @@
           <div>Type - {{$page.googleSheet.Type}}</div>
           <div>Location - {{$page.googleSheet.Location}}-{{$page.googleSheet.ID}}</div>
           <div>Attribution - {{$page.googleSheet.Attribution}}</div>
-          <div>Img URL - {{$page.googleSheet.Img_URL}}</div>
+          <div>Img URL - <g-link :to="$page.googleSheet.Img_URL">{{$page.googleSheet.Img_URL}}</g-link></div>
 <!--         <v-row>
           <v-col sm="6" class="d-flex flex-column justify-center">
             <g-image :src="$page.googleSheet.Img_URL" /> 

@@ -1,19 +1,31 @@
 <template>
   <Layout>
-    <AllPlants />
-    <div class="attribute_container">
-      <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
-        <div class="container-name"> 
-          <a v-bind:href="page.node.Links">
-            <div :class="[italic]">{{ page.node.Main_Name }}</div>
-            <div class="div2"> {{ page.node.Name_Extension }}</div>
-            <div class="div3"> ({{ page.node.Common_Name }})</div> 
-          </a> 
-        </div> 
-      </div>
+    <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
+     <v-card max-width="400" class="mx-auto" elevation="4">
+                <v-avatar class="ma-3" size="194" tile>
+                  <g-link :to="page.node.ID">
+                    <v-img
+                      contain
+                      max-height="194"
+                      max-width="194"
+                      :src="page.node.Img_URL"
+                      :alt="page.node.Common_Name"
+                    ></v-img>
+                    </g-link>
+                 </v-avatar>
+          <v-card-title>{{ page.node.Common_Name }}</v-card-title>
+          <v-card-subtitle>
+            <div class="container-name"> 
+              <g-link :to="page.node.ID">
+                <div :class="[italic]">{{ page.node.Main_Name }}</div>
+                <div class="div2"> {{ page.node.Name_Extension }}</div>
+              </g-link>
+            </div>
+          </v-card-subtitle>
+    </v-card>
+    <br> 
+    <br>
     </div>
-    <br>
-    <br>
   </Layout>
 </template>
 
@@ -47,6 +59,8 @@
            }
 </page-query>
 <script>
+
+import AllPlants from '@/components/AllPlants.vue'
 export default{
   data() {
     return {

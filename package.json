@@ -10,7 +10,7 @@
   "dependencies": {
     "@capsia/gridsome-plugin-local-image": "^1.1.1",
     "@gridsome/remark-prismjs": "^0.2.0",
-    "@noxify/gridsome-plugin-remote-image": "https://github.com/noxify/gridsome-plugin-remote-image.git",
+    "@noxify/gridsome-plugin-remote-image": "^1.3.2",
     "chokidar": "^3.5.1",
     "dotenv": "^8.2.0",
     "dotenv-safe": "^8.2.0",

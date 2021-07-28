@@ -1,38 +1,10 @@
 <template>
-<Layout>
-  <h1>Grasses Garden</h1>
-  <div class="attribute_container">
-    <p> 
+  <Layout>
+    <H1>Grass Garden</H1>
+    <div>
     The Grasses Garden is full and lush during spring and summer and then puts on great displays of color and texture in fall and winter. Once established, most grasses are low-maintenance, drought-tolerant, and resistant to disease.
-    </p> 
-    <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
-     <v-card max-width="400" class="mx-auto" elevation="4">
-                <v-avatar class="ma-3" size="194" tile>
-                  <g-link :to="page.node.ID">
-                    <v-img
-                      contain
-                      max-height="194"
-                      max-width="194"
-                      :src="page.node.Img_URL"
-                      :alt="page.node.Common_Name"
-                    ></v-img>
-                    </g-link>
-                 </v-avatar>
-          <v-card-title>{{ page.node.Common_Name }}</v-card-title>
-          <v-card-subtitle>
-            <div class="container-name"> 
-              <g-link :to="page.node.ID">
-                <div :class="[italic]">{{ page.node.Main_Name }}</div>
-                <div class="div2"> {{ page.node.Name_Extension }}</div>
-              </g-link>
-            </div>
-          </v-card-subtitle>
-
-    </v-card>
-    <br> 
-    </div>
-    </div>
-    <br> 
+    </div> 
+    <AllPlants />
   </Layout>
 </template>
 
@@ -42,24 +14,25 @@ query {
   allGoogleSheet (filter: { Location: { in: ["Grasses"] }}){
     edges {
       node {
-            ID
-            Scientific_Name
-            Main_Name
-            Name_Extension
-            Common_Name
-            Description
-            Size__height_
-            Size__width_
-            Bloom_Season
-            Pruning_Needs
-            Water_Needs
-            Exposure
-            Type 
-            Location  
-            Unique_Name
-            Img_URL
-            Attribution
-            Links
+        ID
+        Scientific_Name
+        Common_Name
+        Main_Name
+        Name_Extension
+        Description
+        Size__height_
+        Size__width_
+        Bloom_Season
+        Pruning_Needs
+        Water_Needs
+        Exposure
+        Pruning_Needs
+        Location
+        Unique_Name
+        Img_URL
+        Attribution
+        Links
+        Type
       }
     }
   }
@@ -67,12 +40,18 @@ query {
 </page-query>
 
 <script>
-export default{
-  data() {
-    return {
-      italic: 'italic', 
-    }
-  }
+import Plant from '@/components/Plant.vue'
+import AllPlants from '@/components/AllPlants.vue'
+
+
+export default {
+  metaInfo: {
+    title: 'Quarry Lake Demonstration Garden -- Grasses Section',
+  },
+  components: {
+    AllPlants,
+    Plant,
+  },
 }
 </script>
 
@@ -80,17 +59,4 @@ export default{
 .home-links a {
   margin-right: 1rem;
 }
-.attribute_container{
-  padding: 10px;
-  background: white; 
-}
-body
-{
-  background: lightblue; 
-}
-.italic { font-style: italic; }
-.container-name div { 
-    display: inline; 
-		height: auto; 
-  } 
 </style>
