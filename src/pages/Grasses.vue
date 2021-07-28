@@ -6,18 +6,32 @@
     The Grasses Garden is full and lush during spring and summer and then puts on great displays of color and texture in fall and winter. Once established, most grasses are low-maintenance, drought-tolerant, and resistant to disease.
     </p> 
     <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
-     <!-- {{page.node.Scientific_Name}}
- <a href={{page.node.Links}}>{{page.node.Scientific_Name}}</a> -->
-      <div class="container-name"> 
-        <a v-bind:href="page.node.Links">
-          <div :class="[italic]">{{ page.node.Main_Name }}</div>
-          <div class="div2"> {{ page.node.Name_Extension }}</div>
-          <div class="div3"> ({{ page.node.Common_Name }})</div> 
-       </a> 
-      </div> 
+     <v-card max-width="400" class="mx-auto" elevation="4">
+                <v-avatar class="ma-3" size="194" tile>
+                  <g-link :to="page.node.ID">
+                    <v-img
+                      contain
+                      max-height="194"
+                      max-width="194"
+                      :src="page.node.Img_URL"
+                      :alt="page.node.Common_Name"
+                    ></v-img>
+                    </g-link>
+                 </v-avatar>
+          <v-card-title>{{ page.node.Common_Name }}</v-card-title>
+          <v-card-subtitle>
+            <div class="container-name"> 
+              <g-link :to="page.node.ID">
+                <div :class="[italic]">{{ page.node.Main_Name }}</div>
+                <div class="div2"> {{ page.node.Name_Extension }}</div>
+              </g-link>
+            </div>
+          </v-card-subtitle>
+
+    </v-card>
+    <br> 
     </div>
     </div>
-    <br>
     <br> 
   </Layout>
 </template>
