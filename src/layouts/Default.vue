@@ -3,9 +3,9 @@
     <Header />
     <Hero v-if="isHome" />
     <v-main>
-      <v-container fill-height class="d-sm-none d-md-flex">
-        <slot />
-      </v-container>
+    <v-container fill-height class="d-sm-none d-md-flex">
+      <slot />
+    </v-container>
     </v-main>
     <Footer />
   </v-app>
@@ -41,6 +41,7 @@ export default {
       items: [
         { title: 'Home', link: '/', icon: 'home' },
         { title: 'About', link: 'about', icon: 'about' },
+        { title: 'Contact', link: 'contact', icon: 'contact' },
         { title: 'Articles', link: 'articles', icon: 'articles' },
       ],
     }

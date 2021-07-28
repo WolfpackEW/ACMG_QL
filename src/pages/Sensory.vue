@@ -1,22 +1,14 @@
 <template>
   <Layout>
     <h1>Sensory Garden</h1>
-    <div class="attribute_container">
+    <div>
       <p>
       Stroll past the Sensory Garden and enjoy a kaleidoscope of colors and textures. Breathe in the sweet fragrance of flowers and herbs. This garden maximizes the sensory impact that a garden can offer. Rosemary is a fragrant evergreen herb native to the Mediterranean.
       </p> 
-    <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
-      <div class="container-name"> 
-        <a v-bind:href="page.node.Links">
-          <div :class="[italic]">{{ page.node.Main_Name }}</div>
-          <div class="div2"> {{ page.node.Name_Extension }}</div>
-          <div class="div3"> ({{ page.node.Common_Name }})</div> 
-          </a> 
-      </div> 
-    </div>
     </div>
     <br>
     <br>  
+    <AllPlants />
   </Layout>
 </template>
 
@@ -51,12 +43,19 @@ query {
 </page-query>
 
 <script>
-export default{
-  data() {
-    return {
-      italic: 'italic', 
-    }
-  }
+import Plant from '@/components/Plant.vue'
+import AllPlants from '@/components/AllPlants.vue'
+//import Card from "@/components/Card.vue"
+
+export default {
+  metaInfo: {
+    title: 'Sensory Garden',
+  },
+  components: {
+    AllPlants,
+    Plant,
+    //Card
+  },
 }
 </script>
 
@@ -64,17 +63,4 @@ export default{
 .home-links a {
   margin-right: 1rem;
 }
-.attribute_container{
-  padding: 10px;
-  background: white; 
-}
-body
-{
-  background: lightblue; 
-}
-.italic { font-style: italic; }
-.container-name div { 
-    display: inline; 
-		height: auto; 
-  } 
 </style>

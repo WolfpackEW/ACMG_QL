@@ -1,22 +1,35 @@
 <template>
   <Layout>
-    <h1>Welcome to the Quarry Lakes Demonstration Garden!</h1>
-    <div class="attribute_container">
-      <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
-        <div class="container-name"> 
-          <a v-bind:href="page.node.Links">
-            <div :class="[italic]">{{ page.node.Main_Name }}</div>
-            <div class="div2"> {{ page.node.Name_Extension }}</div>
-            <div class="div3"> ({{ page.node.Common_Name }})</div> 
-          </a> 
-        </div> 
-      </div>
+    <div v-for= "page in $page.allGoogleSheet.edges" :key= "page.node.ID">
+     <v-card max-width="400" class="mx-auto" elevation="4">
+                <v-avatar class="ma-3" size="194" tile>
+                  <g-link :to="page.node.ID">
+                    <v-img
+                      contain
+                      max-height="194"
+                      max-width="194"
+                      :src="page.node.Img_URL"
+                      :alt="page.node.Common_Name"
+                    ></v-img>
+                    </g-link>
+                 </v-avatar>
+          <v-card-title>{{ page.node.Common_Name }}</v-card-title>
+          <v-card-subtitle>
+            <div class="container-name"> 
+              <g-link :to="page.node.ID">
+                <div :class="[italic]">{{ page.node.Main_Name }}</div>
+                <div class="div2"> {{ page.node.Name_Extension }}</div>
+              </g-link>
+            </div>
+          </v-card-subtitle>
+    </v-card>
+    <br> 
+    <br>
     </div>
-    <br>
-    <br>
   </Layout>
-  
 </template>
+
+<!-- Always put page-query between <template> and <script> -->
 <page-query>
     query {
     allGoogleSheet{
@@ -27,15 +40,15 @@
             Common_Name
             Main_Name
             Name_Extension
-            Description
+        Description
             Size__height_
             Size__width_
-            Bloom_Season
+        Bloom_Season
             Pruning_Needs
-            Water_Needs
-            Exposure
-            Type 
-            Location  
+        Water_Needs
+        Exposure
+        Pruning_Needs
+        Location
             Unique_Name
             Img_URL
             Attribution
@@ -46,6 +59,8 @@
            }
 </page-query>
 <script>
+
+import AllPlants from '@/components/AllPlants.vue'
 export default{
   data() {
     return {
@@ -58,10 +73,6 @@ export default{
 <style>
 .home-links a {
   margin-right: 1rem;
-}
-body
-{
-  background: lightblue; 
 }
 .italic { font-style: italic; }
 .container-name div { 

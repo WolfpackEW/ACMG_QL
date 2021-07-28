@@ -1,48 +1,29 @@
 <template>
   <div class="card">
     {{ message }}
-    <button @click="onClick">
-      Change
-    </button>
+    <button @click="onClick">Change</button>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Card',
-  data () {
+  data() {
     return {
-      message: 'Try change me!'
+      message: 'Try change me!',
     }
   },
   methods: {
-    onClick () {
+    onClick() {
       this.message = 'Here you go :)'
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style>
 .card {
   padding: 20px;
-  background: #FFF;
+  background: #fff;
 }
 </style>
-
-<!--
-<template>
-    <div>
-    <b-button v-b-toggle.collapse-1 variant="primary">Toggle Collapse</b-button>
-    <b-collapse id="collapse-1" class="mt-2">
-        <b-card>
-        <p class="card-text">Collapse contents Here</p>
-        <b-button v-b-toggle.collapse-1-inner size="sm">Toggle Inner Collapse</b-button>
-        <b-collapse id="collapse-1-inner" class="mt-2">
-            <b-card>Hello!</b-card>
-        </b-collapse>
-        </b-card>
-    </b-collapse>
-    </div>
-</template> 
--->

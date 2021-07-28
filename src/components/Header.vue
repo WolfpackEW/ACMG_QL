@@ -39,7 +39,7 @@
           About</v-btn
         >
         <!-- <v-btn text to="/articles">Articles</v-btn> -->
-        <v-btn to="/about" text>
+        <v-btn to="/contact" text>
           <v-icon>mdi-contacts</v-icon>
           Contact
         </v-btn>
@@ -110,10 +110,8 @@ export default {
         { title: 'Mediterranean Plants', icon: 'mdi-flower-outline', path: '/Mediterranean' },
         { title: 'Grasses Plants', icon: 'mdi-flower-outline', path: '/Grasses' },
         { title: 'Sensory Plants', icon: 'mdi-flower-outline', path: '/Sensory' },
-
-
         // { title: "Articles", icon: "fa-newspaper", path: "/articles" },
-        { title: 'Contact', icon: 'mdi-contacts', path: '/about' },
+        { title: 'Contact', icon: 'mdi-contacts', path: '/contact' },
       ],
       mini: false,
     }
