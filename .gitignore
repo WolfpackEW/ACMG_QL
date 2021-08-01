@@ -5,7 +5,6 @@ src/.temp
 node_modules
 dist
 .env
-.env.*
 /acmg.env
 /env.mine
 /gridsome-opac.code-workspace
