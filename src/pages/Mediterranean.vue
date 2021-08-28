@@ -18,8 +18,8 @@ query {
       node {
             ID
             Scientific_Name
-            Main_Name
-            Name_Extension
+            Full_Name
+            Cultivar
             Common_Name
             Description
             Size__height_

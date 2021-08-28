@@ -17,8 +17,8 @@
           <v-card-subtitle>
             <div class="container-name"> 
               <g-link :to="page.node.ID">
-                <div :class="[italic]">{{ page.node.Main_Name }}</div>
-                <div class="div2"> {{ page.node.Name_Extension }}</div>
+                <div :class="[italic]">{{ page.node.Full_Name }}</div>
+                <div class="div2"> {{ page.node.Cultivar }}</div>
               </g-link>
             </div>
           </v-card-subtitle>
@@ -38,8 +38,8 @@
             ID
             Scientific_Name
             Common_Name
-            Main_Name
-            Name_Extension
+            Full_Name
+            Cultivar
         Description
             Size__height_
             Size__width_
