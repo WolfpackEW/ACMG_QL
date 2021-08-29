@@ -17,8 +17,8 @@ query {
         ID
         Scientific_Name
         Common_Name
-        Main_Name
-        Name_Extension
+        Full_Name
+        Cultivar
         Description
         Size__height_
         Size__width_
