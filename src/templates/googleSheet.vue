@@ -21,9 +21,13 @@
           <div><b>Water Needs - &nbsp;</b> {{$page.googleSheet.Water_Needs}}</div>
           <div><b>Exposure - &nbsp;</b> {{$page.googleSheet.Exposure}}</div>
           <div><b>Type - &nbsp;</b> {{$page.googleSheet.Type}}</div>
-          <div><b>Location - &nbsp;</b> {{$page.googleSheet.Location}}-{{$page.googleSheet.ID}}</div>
-          <div><b>Attribution - &nbsp;</b> {{$page.googleSheet.Attribution}}</div>
-<!--
+          <div><b>Location-TagNum - &nbsp;</b> {{$page.googleSheet.Location}}-{{$page.googleSheet.ID}}</div>
+          <div><b>Photo Attribution - &nbsp;</b> {{$page.googleSheet.Attribution}}</div>
+          <br>
+          <div><g-link :to="$page.googleSheet.Plant_Info_Link"> <b>Additional Plant Info</b></g-link></div>
+          <br>
+          <div></div>
+         <!--
           <div>Img URL - <g-link :to="$page.googleSheet.Img_URL">{{$page.googleSheet.Img_URL}}</g-link></div>
          <v-row>
           <v-col sm="6" class="d-flex flex-column justify-center">
@@ -46,6 +50,7 @@
           </v-col>
         </v-row> 
 -->
+      <br>
       </v-container>
     </section>
   </Layout>
@@ -70,6 +75,7 @@ query Sheet($path: String!) {
     Pruning_Needs
     Img_URL
     Attribution
+    Plant_Info_Link
   }
 }
 </page-query>
