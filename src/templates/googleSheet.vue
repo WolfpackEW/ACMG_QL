@@ -3,7 +3,7 @@
     <section id="plant" class="plant-section">
       <v-container>
         <v-img
-          contain
+          
           max-height="400"
           max-width="450"
           :src="$page.googleSheet.Img_URL"
