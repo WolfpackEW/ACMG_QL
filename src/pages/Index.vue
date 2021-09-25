@@ -40,23 +40,22 @@
             Common_Name
             Full_Name
             Cultivar
-        Description
+            Description
             Size__height_
             Size__width_
-        Bloom_Season
+            Bloom_Season
             Pruning_Needs
-        Water_Needs
-        Exposure
-        Pruning_Needs
-        Location
-            Unique_Name
+            Water_Needs
+            Exposure
+            Pruning_Needs
+            Location
             Img_URL
             Attribution
             Links
-               }
-             }
-                  }
-           }
+          }
+        }
+      }
+    }
 </page-query>
 <script>
 

@@ -30,7 +30,7 @@ query {
             Exposure
             Type 
             Location  
-            Unique_Name
+
             Img_URL
             Attribution
             Links
